@@ -1,6 +1,6 @@
 package usecase
 
-import "pointmanagerpackage/repository"
+import "github.com/rianocta97/pointmanagerpackage/repository"
 
 type PointUsecase interface {
 	AddPoint(point int) int

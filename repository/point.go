@@ -1,6 +1,6 @@
 package repository
 
-import config "pointmanagerpackage/config"
+import config "github.com/rianocta97/pointmanagerpackage/config"
 
 type PointRepo interface {
 	Add() int

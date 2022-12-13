@@ -2,7 +2,8 @@ package pointmanagerpackage
 
 import (
 	"fmt"
-	"pointmanagerpackage/usecase"
+
+	"github.com/rianocta97/pointmanagerpackage/usecase"
 )
 
 type PointManager struct {
