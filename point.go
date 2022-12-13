@@ -6,11 +6,11 @@ import (
 	"github.com/rianocta97/pointmanagerpackage/usecase"
 )
 
-type PointManager struct {
+type pointManagerImpl struct {
 	pointUsecase usecase.PointUsecase
 }
 
-func (p *PointManager) IncreasePoint(point int) int {
+func (p *pointManagerImpl) IncreasePoint(point int) int {
 	fmt.Printf("Point awal: %d\n", point)
 
 	point = p.pointUsecase.AddPoint(point)
@@ -20,8 +20,8 @@ func (p *PointManager) IncreasePoint(point int) int {
 	return point
 }
 
-func InitPointManager() *PointManager {
-	pm := new(PointManager)
+func InitPointManager() *pointManagerImpl {
+	pm := new(pointManagerImpl)
 	pm.pointUsecase = usecase.InitPointUsecase()
 	return pm
 }
