@@ -43,7 +43,7 @@ func (p *PointUsecaseImpl) CheckGetBalanceData(rawData interface{}) (*model.GetB
 		return nil, dataPartner, nil
 	} 
 
-	return nil, nil, errors.New("")
+	return nil, nil, errors.New(constant.ErrorValidate_BalanceData)
 }
 
 func (p *PointUsecaseImpl) validateGetBalanceData(dataStar *model.GetBalanceParam, dataPartner *model.InquiryBalanceParam) error{
@@ -87,6 +87,7 @@ func (p *PointUsecaseImpl) PostData(dataStar *model.GetBalanceParam, dataPartner
 
 	responses := make(map[string]interface{})
 	json.Unmarshal(body, &responses)
+	fmt.Println(responses)
 	return responses, nil
 }
 
