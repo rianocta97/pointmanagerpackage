@@ -4,6 +4,6 @@ type GetBalanceParam struct {
 	AccountNumber string `json:"accountNumber"`
 }
 
-type InitBalanceParam struct {
+type InquiryBalanceParam struct {
 	AccountToken string `json:"accToken"`
 }
