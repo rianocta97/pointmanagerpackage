@@ -67,7 +67,7 @@ func (p *PointUsecaseImpl) PostData(dataStar *model.GetBalanceParam, dataPartner
 	if dataStar != nil {
 		postBody, _ = json.Marshal(dataStar)
 	} else if dataPartner != nil {
-		postBody, _ = json.Marshal(dataStar)
+		postBody, _ = json.Marshal(dataPartner)
 	} else {
 		return nil, errors.New(constant.ErrorValidate_BalanceData)
 	}
@@ -79,11 +79,13 @@ func (p *PointUsecaseImpl) PostData(dataStar *model.GetBalanceParam, dataPartner
 	}
 
 	defer resp.Body.Close()
+	fmt.Println("resp", resp)
 
 	body, err := ioutil.ReadAll(reqBody)
 	if err != nil {
 		return nil, err
 	}
+	fmt.Println("body", body)
 
 	responses := make(map[string]interface{})
 	json.Unmarshal(body, &responses)
