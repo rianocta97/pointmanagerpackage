@@ -65,9 +65,9 @@ func (p *PointUsecaseImpl) validateGetBalanceData(dataStar *model.GetBalancePara
 func (p *PointUsecaseImpl) PostData(dataStar *model.GetBalanceParam, dataPartner *model.InquiryBalanceParam) (map[string]interface{}, error) {
 	var postBody []byte
 	if dataStar != nil {
-		postBody, _ = json.Marshal(dataStar)
+		postBody, _ = json.Marshal(&dataStar)
 	} else if dataPartner != nil {
-		postBody, _ = json.Marshal(dataPartner)
+		postBody, _ = json.Marshal(&dataPartner)
 	} else {
 		return nil, errors.New(constant.ErrorValidate_BalanceData)
 	}
